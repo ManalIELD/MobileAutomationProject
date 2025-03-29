@@ -16,7 +16,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 public class TestBase {
-    private AndroidDriver driver;
+    protected AndroidDriver driver;
     private AppiumDriverLocalService service;
     private PropertyReader propertyReader;
 
@@ -39,8 +39,9 @@ public class TestBase {
                 .noReset() //To make appium not start with clean state (e.g. doesn't reinstall the app every run)
                 .setPlatformName(Platform.ANDROID.name()) //Platform name
                 .setUdid("afbb072a")
-                .setApp("src/test/resources/General-Store.apk"); //Path of the App (ApiDemos-debug.apk)
-
+                .setApp("E:\\ITI\\Appium\\AppiumTeamProject\\src\\test\\resources\\General-Store.apk"); //Path of the App (ApiDemos-debug.apk)
+                // Ignore hidden API policy error
+                 options.setCapability("appium:ignoreHiddenApiPolicyError", true);
         try {
             driver = new AndroidDriver(
                     new URI("http://"
