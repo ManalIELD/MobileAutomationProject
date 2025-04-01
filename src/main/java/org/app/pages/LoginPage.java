@@ -13,12 +13,16 @@ public class LoginPage {
     //variables
     AndroidDriver driver;
     //constructor
-    public LoginPage(AndroidDriver driver){
-        this.driver=driver;
+    public LoginPage(AndroidDriver driver) {
+        if (driver == null) {
+            throw new IllegalArgumentException("Driver instance cannot be null!");
+        }
+        this.driver = driver;
     }
 
+
     //locators
-    private By countryDropdown = AppiumBy.id("android:id/text1");
+    private By countryDropdown = AppiumBy.xpath("//*[@resource-id='android:id/text1']");
     /*private By countrySelection =AppiumBy.androidUIAutomator(
             "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
                         ".scrollIntoView(new UiSelector().text(\"Egypt\"))");*/
@@ -30,7 +34,7 @@ public class LoginPage {
     //actions
     // Clicks the dropdown to open country list
     public void clickCountryDropdown() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
         wait.until(ExpectedConditions.elementToBeClickable(countryDropdown)).click();
     }
 

@@ -15,7 +15,10 @@ public class ProductsPage {
 
     //constructor
     public ProductsPage(AndroidDriver driver){
-        this.driver=driver;
+        if (driver == null) {
+            throw new IllegalArgumentException("Driver instance cannot be null!");
+        }
+        this.driver = driver;
     }
 
     //locators

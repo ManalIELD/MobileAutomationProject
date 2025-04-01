@@ -11,48 +11,44 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
+import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
 public class TestBase {
-    protected AndroidDriver driver;
+    protected AndroidDriver driver; // This is the global driver instance
     private AppiumDriverLocalService service;
     private PropertyReader propertyReader;
 
     @BeforeClass
     public void setUpAppiumService() {
-        propertyReader = new PropertyReader();
         service = new AppiumServiceBuilder()
-                .withIPAddress(propertyReader.getProperty("ipAddress")) // Set the address
-                .usingPort(Integer.parseInt(propertyReader.getProperty("port")))// Set the port
-                .withArgument(() -> "--use-drivers", propertyReader.getProperty("driver")) //To Run Appium with specific driver
+                .withAppiumJS(new File("C:/Users/Manal Ibrahim/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
+                .usingPort(4723)
+                .withIPAddress("127.0.0.1")
+                .withArgument(() -> "--use-drivers", "uiautomator2")
                 .build();
         service.start();
     }
 
-    //Set up clean driver for each test
     @BeforeMethod
     public void setUpDriver() {
-        UiAutomator2Options options = new UiAutomator2Options() //To add UiAutomator Capabilities (Options)
-                .setDeviceName(propertyReader.getProperty("device")) //Running Device Name(e.g. like the name from Android Studio)
-                .noReset() //To make appium not start with clean state (e.g. doesn't reinstall the app every run)
-                .setPlatformName(Platform.ANDROID.name()) //Platform name
-                .setUdid("afbb072a")
-                .setApp("E:\\ITI\\Appium\\AppiumTeamProject\\src\\test\\resources\\General-Store.apk"); //Path of the App (ApiDemos-debug.apk)
-                // Ignore hidden API policy error
-                 options.setCapability("appium:ignoreHiddenApiPolicyError", true);
+        UiAutomator2Options options = new UiAutomator2Options()
+                .setPlatformName("Android")
+                .setDeviceName("Pixel_7_Pro_API_30")
+                .setApp(System.getProperty("user.dir") + "/src/test/resources/General-Store.apk")
+                .setAutomationName("uiautomator2")
+                .noReset(); // Keeps app data between sessions
+
         try {
-            driver = new AndroidDriver(
-                    new URI("http://"
-                            + propertyReader.getProperty("ipAddress") + ":" //Must be the same Address Appium is running on
-                            + propertyReader.getProperty("port")).toURL(), options);//Must be the same port Appium is running on
+            driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
+            System.out.println("App launched successfully!");
         } catch (MalformedURLException | URISyntaxException e) {
-            throw new RuntimeException(e);
+            throw new RuntimeException("Failed to initialize Appium driver", e);
         }
     }
 
-    //Close the Running Driver after every test finishes
     @AfterMethod
     public void tearDownDriver() {
         if (driver != null) {
@@ -60,7 +56,6 @@ public class TestBase {
         }
     }
 
-    //Close the Running Service after all tests finish
     @AfterClass
     public void tearDownAppiumService() {
         if (service != null) {
