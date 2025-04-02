@@ -17,7 +17,7 @@ public class LoginTest extends TestBase {
         loginPage.clickCountryDropdown();
         loginPage.chooseCountry("Argentina");
         loginPage.enterName("Manal");
-        loginPage.selectFemaleGender();
+        loginPage.selectGender("Female");
         loginPage.clickShopButton();
 
         ProductsPage productsPage = new ProductsPage(driver);

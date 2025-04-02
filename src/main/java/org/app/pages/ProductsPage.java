@@ -2,6 +2,7 @@ package org.app.pages;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import org.app.utils.ActionsUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -15,9 +16,6 @@ public class ProductsPage {
 
     //constructor
     public ProductsPage(AndroidDriver driver){
-        if (driver == null) {
-            throw new IllegalArgumentException("Driver instance cannot be null!");
-        }
         this.driver = driver;
     }
 
@@ -27,12 +25,11 @@ public class ProductsPage {
     private By addedToCart=AppiumBy.androidUIAutomator("new UiSelector().text(\"ADDED TO CART\")\n");
     //actions
     public void addProductToCart() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(addToCartButton)).click();
+        ActionsUtil.click(driver,addToCartButton);
     }
 
     public void clickCartIcon() {
-        driver.findElement(cartIcon).click();
+        ActionsUtil.click(driver,cartIcon);
     }
 
     //validations

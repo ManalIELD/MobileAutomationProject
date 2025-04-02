@@ -5,7 +5,6 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.app.utils.PropertyReader;
-import org.openqa.selenium.Platform;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -43,7 +42,6 @@ public class TestBase {
 
         try {
             driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
-            System.out.println("App launched successfully!");
         } catch (MalformedURLException | URISyntaxException e) {
             throw new RuntimeException("Failed to initialize Appium driver", e);
         }

@@ -2,6 +2,7 @@ package org.app.pages;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import org.app.utils.ActionsUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -38,12 +39,11 @@ public class CartPage {
    // }
  // Actions
     public void selectEmailCheckbox() {
-        driver.findElement(emailCheckbox).click();
+        ActionsUtil.click(driver,emailCheckbox);
     }
 
     public void clickPurchaseButton() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.elementToBeClickable(purchaseButton)).click();
+        ActionsUtil.click(driver,purchaseButton);
     }
 }
 
