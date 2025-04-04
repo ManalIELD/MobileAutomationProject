@@ -4,6 +4,8 @@ import io.appium.java_client.android.AndroidDriver;
 import org.app.pages.CartPage;
 import org.app.pages.LoginPage;
 import org.app.pages.ProductsPage;
+import org.app.utils.AllureUtil;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 public class LoginTest extends TestBase {
@@ -30,5 +32,9 @@ public class LoginTest extends TestBase {
         //cartPage.validateTotalPurchaseAmount();
         cartPage.selectEmailCheckbox();
         cartPage.clickPurchaseButton();
+    }
+    @AfterClass
+    public void afterClass(){
+        AllureUtil.attachLogsToAllureReport();
     }
 }
