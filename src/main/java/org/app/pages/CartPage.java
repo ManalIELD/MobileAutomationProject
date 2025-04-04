@@ -2,6 +2,7 @@ package org.app.pages;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,6 +26,7 @@ public class CartPage {
 
 
     // validations
+    @Step( "add item validation")
     public void addItemValidation() {
         Assert.assertTrue(driver.findElement(productName).isDisplayed(), "Item is not displayed in the cart!");
     }
@@ -38,10 +40,11 @@ public class CartPage {
        // Assert.assertEquals(totalAmountText, "$160.97", "Total purchase amount mismatch!");
    // }
  // Actions
+       @Step("select email checkbox")
     public void selectEmailCheckbox() {
         ActionsUtil.click(driver,emailCheckbox);
     }
-
+      @Step("click purchase button")
     public void clickPurchaseButton() {
         ActionsUtil.click(driver,purchaseButton);
     }

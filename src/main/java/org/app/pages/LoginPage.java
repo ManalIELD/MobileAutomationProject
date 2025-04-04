@@ -2,6 +2,7 @@ package org.app.pages;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
 import org.openqa.selenium.By;
 
@@ -26,11 +27,13 @@ public class LoginPage {
 
 
     //actions
+    @Step("click country dropdown")
     public void clickCountryDropdown() {
         ActionsUtil.click(driver, countryDropdown);  // Using the click method from ActionsUtil
     }
 
     // Selects a specific country by scrolling and clicking on it
+    @Step("choose country")
     public void chooseCountry(String countryName) {
         By countryLocator = By.xpath("//android.widget.TextView[@text='" + countryName + "']");
         ActionsUtil.scrollToElement(driver, countryLocator);
@@ -38,11 +41,13 @@ public class LoginPage {
     }
 
     // Enter name into the name field
+    @Step("enter name")
     public void enterName(String name) {
         ActionsUtil.type(driver, nameField, name);  // Using the type method from ActionsUtil
     }
 
     // Select Gender
+    @Step ("select gender")
     public void selectGender(String gender) {
         By genderLocator = By.xpath("//android.widget.RadioButton[@text='" + gender + "']");
         ActionsUtil.click(driver, genderLocator);
@@ -50,6 +55,7 @@ public class LoginPage {
 
 
     // Click the Shop Button
+    @Step("click sho button")
     public void clickShopButton() {
         ActionsUtil.click(driver, shopButton);  // Using the click method from ActionsUtil
     }

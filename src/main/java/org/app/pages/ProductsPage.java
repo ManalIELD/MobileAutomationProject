@@ -2,6 +2,7 @@ package org.app.pages;
 
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
+import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -24,10 +25,11 @@ public class ProductsPage {
     private By addToCartButton=AppiumBy.xpath("//android.widget.TextView[@text='ADD TO CART']");
     private By addedToCart=AppiumBy.androidUIAutomator("new UiSelector().text(\"ADDED TO CART\")\n");
     //actions
+    @Step("add product to cart")
     public void addProductToCart() {
         ActionsUtil.click(driver,addToCartButton);
     }
-
+    @Step("click cart icon")
     public void clickCartIcon() {
         ActionsUtil.click(driver,cartIcon);
     }
