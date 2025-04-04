@@ -4,6 +4,7 @@ import org.app.utils.FilesUtil;
 import org.app.utils.LogsUtil;
 import org.app.utils.PropertyReader;
 import org.app.utils.ScreenshotsUtil;
+import org.app.utils.AllureUtil;
 import org.testng.*;
 
 import java.io.File;
@@ -36,7 +37,7 @@ public class TestNGListeners implements IExecutionListener , ITestListener , IIn
                 case ITestResult.SKIP -> ScreenshotsUtil.takeScreenshot("skipped-"+testResult.getName());
 
             }
-            AllureUtil.attachLogs();
+            AllureUtil.attachLogsToAllureReport();
         }
     }
     @Override
