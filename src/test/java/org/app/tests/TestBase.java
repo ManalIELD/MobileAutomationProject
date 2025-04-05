@@ -35,11 +35,13 @@ public class TestBase {
     public void setUpDriver() {
         UiAutomator2Options options = new UiAutomator2Options()
                 .setPlatformName("Android")
-                .setDeviceName("Pixel_7_Pro_API_30")
+                //.setDeviceName("Pixel_7_Pro_API_30")
                 .setApp(System.getProperty("user.dir") + "/src/test/resources/General-Store.apk")
                 .setAutomationName("uiautomator2")
-                .noReset(); // Keeps app data between sessions
+                .setUdid("")
 
+                .noReset(); // Keeps app data between sessions
+        options.setCapability("appium:ignoreHiddenApiPolicyError", true);
         try {
             driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
         } catch (MalformedURLException | URISyntaxException e) {

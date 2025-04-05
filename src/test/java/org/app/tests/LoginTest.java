@@ -1,6 +1,5 @@
 package org.app.tests;
 
-import io.appium.java_client.android.AndroidDriver;
 import org.app.pages.CartPage;
 import org.app.pages.LoginPage;
 import org.app.pages.ProductsPage;
