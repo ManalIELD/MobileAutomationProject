@@ -23,7 +23,7 @@ public class TestBase {
     @BeforeClass
     public void setUpAppiumService() {
         service = new AppiumServiceBuilder()
-                .withAppiumJS(new File("C:/Users/Manal Ibrahim/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
+               // .withAppiumJS(new File("C:/Users/Manal Ibrahim/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
                 .usingPort(4723)
                 .withIPAddress("127.0.0.1")
                 .withArgument(() -> "--use-drivers", "uiautomator2")
