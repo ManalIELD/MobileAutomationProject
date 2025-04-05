@@ -1,12 +1,14 @@
 package org.app.tests;
 
+import org.app.listeners.TestNGListeners;
 import org.app.pages.CartPage;
 import org.app.pages.LoginPage;
 import org.app.pages.ProductsPage;
 import org.app.utils.AllureUtil;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+@Listeners(TestNGListeners.class)
 public class LoginTest extends TestBase {
     //variables
 

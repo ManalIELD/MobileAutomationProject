@@ -1,0 +1,2 @@
+[INFO] - [05-04-2025 18:14:11] [main] [org.app.listeners.TestNGListeners] - Test execution started
+[ERROR] - [05-04-2025 18:14:12] [main] [org.app.utils.ScreenshotsUtil] - failed to take a screenshotCannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "org.app.utils.ScreenshotsUtil.driver" is null

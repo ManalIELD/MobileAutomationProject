@@ -36,8 +36,8 @@ public class LoginPage {
     // Selects a specific country by scrolling and clicking on it
     @Step("choose country")
     public void chooseCountry(String countryName) {
+        ActionsUtil.scrollToElement(driver, countryName); // now passes only the name
         By countryLocator = By.xpath("//android.widget.TextView[@text='" + countryName + "']");
-        ActionsUtil.scrollToElement(driver, countryLocator);
         ActionsUtil.click(driver, countryLocator);
     }
 
@@ -59,7 +59,5 @@ public class LoginPage {
     @Step("click shop button")
     public void clickShopButton() {
         ActionsUtil.click(driver, shopButton) ; // Using the click method from ActionsUtil
-
-     ScreenshotsUtil.takeScreenshot(driver, "shop button clicked");
-                }
+     }
 }

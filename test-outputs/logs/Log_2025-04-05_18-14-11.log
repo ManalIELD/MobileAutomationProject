@@ -1,0 +1,41 @@
+[INFO] - [05-04-2025 18:14:11] [main] [org.app.listeners.TestNGListeners] - Test execution started
+[ERROR] - [05-04-2025 18:14:12] [main] [org.app.utils.ScreenshotsUtil] - failed to take a screenshotCannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "org.app.utils.ScreenshotsUtil.driver" is null
+[INFO] - [05-04-2025 18:14:21] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //*[@resource-id='android:id/text1']
+[INFO] - [05-04-2025 18:14:24] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //*[@resource-id='android:id/text1']
+[INFO] - [05-04-2025 18:14:28] [main] [org.app.utils.ActionsUtil] - Scrolled to element Argentina
+[INFO] - [05-04-2025 18:14:28] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='Argentina']
+[INFO] - [05-04-2025 18:14:28] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='Argentina']
+[INFO] - [05-04-2025 18:14:28] [main] [org.app.utils.WaitUtil] - Waiting for element to be visible: AppiumBy.className: android.widget.EditText
+[INFO] - [05-04-2025 18:14:29] [main] [org.app.utils.ActionsUtil] - Data entered Manal in the field AppiumBy.className: android.widget.EditText
+[INFO] - [05-04-2025 18:14:29] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.RadioButton[@text='Female']
+[INFO] - [05-04-2025 18:14:30] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.RadioButton[@text='Female']
+[INFO] - [05-04-2025 18:14:30] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/btnLetsShop")
+[INFO] - [05-04-2025 18:14:31] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/btnLetsShop")
+[INFO] - [05-04-2025 18:14:31] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [05-04-2025 18:14:33] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [05-04-2025 18:14:33] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/appbar_btn_cart")
+[INFO] - [05-04-2025 18:14:33] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/appbar_btn_cart")
+[INFO] - [05-04-2025 18:14:34] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().className("android.widget.CheckBox")
+[INFO] - [05-04-2025 18:14:34] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().className("android.widget.CheckBox")
+[INFO] - [05-04-2025 18:14:34] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().textContains("Visit")
+[INFO] - [05-04-2025 18:14:35] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().textContains("Visit")
+[INFO] - [05-04-2025 18:14:37] [main] [org.app.listeners.TestNGListeners] - Test case login passed
+[ERROR] - [05-04-2025 18:14:37] [main] [org.app.utils.ScreenshotsUtil] - failed to take a screenshotSession ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, screenshot {}]
+Capabilities {appium:app: E:\ITI\Appium\AppiumTeamPro..., appium:appActivity: com.androidsample.generalst..., appium:appPackage: com.androidsample.generalstore, appium:automationName: uiautomator2, appium:databaseEnabled: false, appium:desired: {app: E:\ITI\Appium\AppiumTeamPro..., automationName: uiautomator2, ignoreHiddenApiPolicyError: true, noReset: true, platformName: ANDROID, udid: }, appium:deviceApiLevel: 33, appium:deviceManufacturer: OnePlus, appium:deviceModel: IN2025, appium:deviceName: afbb072a, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2376, appium:deviceUDID: afbb072a, appium:ignoreHiddenApiPolicyError: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 3, appium:platformVersion: 13, appium:statBarHeight: 93, appium:takesScreenshot: true, appium:udid: , appium:viewportRect: {height: 2283, left: 0, top: 93, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+[ERROR] - [05-04-2025 18:14:37] [main] [org.app.utils.ScreenshotsUtil] - failed to take a screenshotSession ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, screenshot {}]
+Capabilities {appium:app: E:\ITI\Appium\AppiumTeamPro..., appium:appActivity: com.androidsample.generalst..., appium:appPackage: com.androidsample.generalstore, appium:automationName: uiautomator2, appium:databaseEnabled: false, appium:desired: {app: E:\ITI\Appium\AppiumTeamPro..., automationName: uiautomator2, ignoreHiddenApiPolicyError: true, noReset: true, platformName: ANDROID, udid: }, appium:deviceApiLevel: 33, appium:deviceManufacturer: OnePlus, appium:deviceModel: IN2025, appium:deviceName: afbb072a, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2376, appium:deviceUDID: afbb072a, appium:ignoreHiddenApiPolicyError: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 3, appium:platformVersion: 13, appium:statBarHeight: 93, appium:takesScreenshot: true, appium:udid: , appium:viewportRect: {height: 2283, left: 0, top: 93, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+[ERROR] - [05-04-2025 18:14:37] [main] [org.app.utils.ScreenshotsUtil] - failed to take a screenshotSession ID is null. Using WebDriver after calling quit()?
+Build info: version: '4.31.0', revision: '1ef9f18787*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [null, screenshot {}]
+Capabilities {appium:app: E:\ITI\Appium\AppiumTeamPro..., appium:appActivity: com.androidsample.generalst..., appium:appPackage: com.androidsample.generalstore, appium:automationName: uiautomator2, appium:databaseEnabled: false, appium:desired: {app: E:\ITI\Appium\AppiumTeamPro..., automationName: uiautomator2, ignoreHiddenApiPolicyError: true, noReset: true, platformName: ANDROID, udid: }, appium:deviceApiLevel: 33, appium:deviceManufacturer: OnePlus, appium:deviceModel: IN2025, appium:deviceName: afbb072a, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2376, appium:deviceUDID: afbb072a, appium:ignoreHiddenApiPolicyError: true, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:noReset: true, appium:pixelRatio: 3, appium:platformVersion: 13, appium:statBarHeight: 93, appium:takesScreenshot: true, appium:udid: , appium:viewportRect: {height: 2283, left: 0, top: 93, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+[INFO] - [05-04-2025 18:14:37] [main] [org.app.listeners.TestNGListeners] - Test execution finished
