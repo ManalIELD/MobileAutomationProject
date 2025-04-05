@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
+import org.app.utils.ScreenshotsUtil;
 import org.openqa.selenium.By;
 
 
@@ -55,9 +56,10 @@ public class LoginPage {
 
 
     // Click the Shop Button
-    @Step("click sho button")
+    @Step("click shop button")
     public void clickShopButton() {
-        ActionsUtil.click(driver, shopButton);  // Using the click method from ActionsUtil
-    }
+        ActionsUtil.click(driver, shopButton) ; // Using the click method from ActionsUtil
 
+     ScreenshotsUtil.takeScreenshot(driver, "shop button clicked");
+                }
 }
