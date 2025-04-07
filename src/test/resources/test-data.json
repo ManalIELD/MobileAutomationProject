@@ -1,0 +1,15 @@
+{
+  "login-credentials": {
+    "name": "Manal",
+    "Country": "Argentina",
+    "gender" : "female"
+  },
+  "product-names": {
+    "item1": {
+      "name": "Air Jordan 4 Retro",
+      "price": "$160.97"
+    }
+  }
+}
+
+
