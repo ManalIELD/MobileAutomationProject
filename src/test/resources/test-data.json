@@ -1,8 +1,15 @@
 {
   "login-credentials": {
-    "name": "Manal",
-    "Country": "Argentina",
-    "gender" : "female"
+    "person1": {
+      "name": "Manal",
+      "Country": "Argentina",
+      "gender": "female"
+    },
+    "person2": {
+      "name": "Hossam",
+      "Country": "USA",
+      "gender": "male"
+    }
   },
   "product-names": {
     "item1": {

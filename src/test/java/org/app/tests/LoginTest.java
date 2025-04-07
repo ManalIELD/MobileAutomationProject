@@ -33,9 +33,9 @@ JsonUtil testData;
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.clickCountryDropdown();
-        loginPage.chooseCountry(testData.getJsonData("login-credentials.Country"));
-        loginPage.enterName("login-credentials.name");
-        loginPage.selectGender("login-credentials.gender");
+        loginPage.chooseCountry(testData.getJsonData("login-credentials.Person1.Country"));
+        loginPage.enterName("login-credentials.Person1.name");
+        loginPage.selectGender("login-credentials.Person1.gender");
         loginPage.clickShopButton();
 
         ProductsPage productsPage = new ProductsPage(driver);
