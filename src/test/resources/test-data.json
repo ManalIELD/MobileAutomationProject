@@ -2,21 +2,35 @@
   "login-credentials": {
     "person1": {
       "name": "Manal",
-      "Country": "Argentina",
-      "gender": "female"
+      "country": "Argentina",
+      "gender": "Female"
     },
     "person2": {
       "name": "Hossam",
-      "Country": "USA",
-      "gender": "male"
+      "country": "USA",
+      "gender": "Male"
     }
   },
   "product-names": {
-    "item1": {
+    "Air-Jordan-4-Retro": {
       "name": "Air Jordan 4 Retro",
       "price": "$160.97"
+    },
+    "Nike-Blazer-Mid-'77": {
+      "name": "Nike Blazer Mid '77",
+      "price": "$110.00"
+    },
+    "Converse-All-Star": {
+      "name": "Converse All Star",
+      "price": "$55.00"
+    },
+    "PG-3": {
+      "name": "PG 3",
+      "price": "$110.00"
     }
   }
+
 }
+
 
 

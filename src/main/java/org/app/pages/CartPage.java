@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
+import org.app.utils.WaitUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -27,9 +28,12 @@ public class CartPage {
 
     // validations
     @Step( "add item validation")
-    public void addItemValidation() {
-        Assert.assertTrue(driver.findElement(productName).isDisplayed(), "Item is not displayed in the cart!");
+    public void addItemValidation(String productName) {
+        By productInCart = AppiumBy.androidUIAutomator("new UiSelector().text(\"" + productName + "\")");
+        WaitUtil.waitForElementVisibility(driver,productInCart);
+        Assert.assertTrue(driver.findElement(productInCart).isDisplayed(), "Item '" + productName + "' is not displayed in the cart!");
     }
+
 // this didn't work well and I couldn't excute other testcases well , so I ignored it for now to check all worked properly
 
     //public void validateTotalPurchaseAmount() {

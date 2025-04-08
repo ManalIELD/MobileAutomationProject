@@ -26,9 +26,14 @@ public class ProductsPage {
     private By addedToCart=AppiumBy.androidUIAutomator("new UiSelector().text(\"ADDED TO CART\")\n");
     //actions
     @Step("add product to cart")
-    public void addProductToCart() {
+    public void addProductToCart(String productName) {
+    By product = AppiumBy.androidUIAutomator(
+            "new UiScrollable(new UiSelector().scrollable(true))" +
+                    ".scrollIntoView(new UiSelector().textContains(\"" + productName + "\"))");
+    ActionsUtil.findElement(driver,product);
         ActionsUtil.click(driver,addToCartButton);
     }
+
     @Step("click cart icon")
     public void clickCartIcon() {
         ActionsUtil.click(driver,cartIcon);

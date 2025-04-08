@@ -36,7 +36,7 @@ public class LoginPage {
     // Selects a specific country by scrolling and clicking on it
     @Step("choose country")
     public void chooseCountry(String countryName) {
-        ActionsUtil.scrollToElement(driver, countryName); // now passes only the name
+        ActionsUtil.scrollToElement(driver, countryName);
         By countryLocator = By.xpath("//android.widget.TextView[@text='" + countryName + "']");
         ActionsUtil.click(driver, countryLocator);
     }

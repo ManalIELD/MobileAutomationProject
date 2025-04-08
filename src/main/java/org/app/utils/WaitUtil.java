@@ -1,5 +1,6 @@
 package org.app.utils;
 
+import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,21 +18,21 @@ public class WaitUtil {
     }
 
     // Wait for element to be present
-    public static WebElement waitForElementPresence(WebDriver driver, By locator) {
+    public static WebElement waitForElementPresence(AndroidDriver driver, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         LogsUtil.info("Waiting for element to be present: " + locator.toString());
         return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
 
     // Wait for element to be visible
-    public static WebElement waitForElementVisibility(WebDriver driver, By locator) {
+    public static WebElement waitForElementVisibility(AndroidDriver driver, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         LogsUtil.info("Waiting for element to be visible: " + locator.toString());
         return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     // Wait for element to be clickable
-    public static WebElement waitForElementClickability(WebDriver driver, By locator) {
+    public static WebElement waitForElementClickability(AndroidDriver driver, By locator) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
         LogsUtil.info("Waiting for element to be clickable: " + locator.toString());
         return wait.until(ExpectedConditions.elementToBeClickable(locator));

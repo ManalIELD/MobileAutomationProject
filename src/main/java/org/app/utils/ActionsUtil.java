@@ -3,6 +3,7 @@ package org.app.utils;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
@@ -23,6 +24,11 @@ public class ActionsUtil {
         LogsUtil.info("Clicked on element", locator.toString());
     }
 
+    public static WebElement findElement(AndroidDriver driver, By locator){
+        LogsUtil.info("finding element", locator.toString());
+        return driver.findElement(locator);
+    }
+
     public static String getText(AndroidDriver driver, By locator) {
         WebElement element = WaitUtil.waitForElementVisibility(driver, locator);
         String text = element.getText();
@@ -40,6 +46,7 @@ public class ActionsUtil {
             LogsUtil.error("Failed to scroll to element", textToFind);
         }
     }
+
 
 
 }

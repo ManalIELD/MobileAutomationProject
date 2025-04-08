@@ -5,46 +5,35 @@ import org.app.pages.CartPage;
 import org.app.pages.LoginPage;
 import org.app.pages.ProductsPage;
 import org.app.utils.AllureUtil;
-import org.app.utils.FilesUtil;
-import org.app.utils.JsonUtil;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.io.File;
-
-import static org.app.utils.PropertiesUtil.loadProperties;
-
 @Listeners(TestNGListeners.class)
-public class LoginTest extends TestBase {
-    //variables
-File allure_results = new File("test-outputs/allure-results");
-JsonUtil testData;
+public class E2eTest extends TestBase {
+
     //test
-    @BeforeSuite
-    public void beforeSuite(){
-        loadProperties();
-        FilesUtil.deleteFiles(allure_results);
-        testData = new JsonUtil("test-data");
-    }
+
     @Test
-    public void login(){
+    public void E2eScenario(){
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.clickCountryDropdown();
-        loginPage.chooseCountry(testData.getJsonData("login-credentials.Person1.Country"));
-        loginPage.enterName("login-credentials.Person1.name");
-        loginPage.selectGender("login-credentials.Person1.gender");
+        loginPage.chooseCountry(testData.getJsonData("login-credentials.person1.country"));
+        loginPage.enterName(testData.getJsonData("login-credentials.person1.name"));
+        loginPage.selectGender(testData.getJsonData("login-credentials.person1.gender"));
         loginPage.clickShopButton();
 
         ProductsPage productsPage = new ProductsPage(driver);
-        productsPage.addProductToCart();
+        productsPage.addProductToCart(testData.getJsonData("product-names.Air-Jordan-4-Retro"));
+        productsPage.addProductToCart(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"));
+        productsPage.addProductToCart(testData.getJsonData("product-names.Converse-All-Star.name"));
+
         productsPage.validateItemAddedToCart();
         productsPage.clickCartIcon();
 
         CartPage cartPage = new CartPage(driver);
-        cartPage.addItemValidation();
+        cartPage.addItemValidation(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"));
         //cartPage.validateTotalPurchaseAmount();
         cartPage.selectEmailCheckbox();
         cartPage.clickPurchaseButton();
