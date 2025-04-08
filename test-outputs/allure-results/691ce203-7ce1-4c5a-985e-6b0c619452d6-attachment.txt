@@ -1,0 +1,38 @@
+[INFO] - [08-04-2025 23:03:56] [main] [org.app.listeners.TestNGListeners] - Test execution started
+[INFO] - [08-04-2025 23:03:56] [main] [org.app.utils.PropertiesUtil] - Loading Properties File Data
+[INFO] - [08-04-2025 23:04:03] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //*[@resource-id='android:id/text1']
+[INFO] - [08-04-2025 23:04:06] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //*[@resource-id='android:id/text1']
+[INFO] - [08-04-2025 23:04:06] [main] [org.app.utils.JsonUtil] - Json path: 'login-credentials.person1.country' in the json file: 'test-data' has value: 'Argentina'
+[INFO] - [08-04-2025 23:04:07] [main] [org.app.utils.ActionsUtil] - Scrolled to element Argentina
+[INFO] - [08-04-2025 23:04:07] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='Argentina']
+[INFO] - [08-04-2025 23:04:08] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='Argentina']
+[INFO] - [08-04-2025 23:04:08] [main] [org.app.utils.JsonUtil] - Json path: 'login-credentials.person1.name' in the json file: 'test-data' has value: 'Manal'
+[INFO] - [08-04-2025 23:04:08] [main] [org.app.utils.WaitUtil] - Waiting for element to be visible: AppiumBy.className: android.widget.EditText
+[INFO] - [08-04-2025 23:04:08] [main] [org.app.utils.ActionsUtil] - Data entered Manal in the field AppiumBy.className: android.widget.EditText
+[INFO] - [08-04-2025 23:04:08] [main] [org.app.utils.JsonUtil] - Json path: 'login-credentials.person1.gender' in the json file: 'test-data' has value: 'Female'
+[INFO] - [08-04-2025 23:04:08] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.RadioButton[@text='Female']
+[INFO] - [08-04-2025 23:04:09] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.RadioButton[@text='Female']
+[INFO] - [08-04-2025 23:04:09] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/btnLetsShop")
+[INFO] - [08-04-2025 23:04:10] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/btnLetsShop")
+[ERROR] - [08-04-2025 23:04:10] [main] [org.app.utils.JsonUtil] - class java.util.LinkedHashMap cannot be cast to class java.lang.String (java.util.LinkedHashMap and java.lang.String are in module java.base of loader 'bootstrap') No results for json path: 'product-names.Air-Jordan-4-Retro' in the json file: 'test-data'
+[INFO] - [08-04-2025 23:04:10] [main] [org.app.utils.JsonUtil] - Json path: 'product-names.Air-Jordan-4-Retro' in the json file: 'test-data' has value: ''
+[INFO] - [08-04-2025 23:04:10] [main] [org.app.utils.ActionsUtil] - finding element AppiumBy.androidUIAutomator: new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(""))
+[INFO] - [08-04-2025 23:04:11] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [08-04-2025 23:04:11] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [08-04-2025 23:04:11] [main] [org.app.utils.JsonUtil] - Json path: 'product-names.Nike-Blazer-Mid-'77.name' in the json file: 'test-data' has value: 'Nike Blazer Mid '77'
+[INFO] - [08-04-2025 23:04:11] [main] [org.app.utils.ActionsUtil] - finding element AppiumBy.androidUIAutomator: new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains("Nike Blazer Mid '77"))
+[INFO] - [08-04-2025 23:04:14] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [08-04-2025 23:04:14] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [08-04-2025 23:04:14] [main] [org.app.utils.JsonUtil] - Json path: 'product-names.Converse-All-Star.name' in the json file: 'test-data' has value: 'Converse All Star'
+[INFO] - [08-04-2025 23:04:14] [main] [org.app.utils.ActionsUtil] - finding element AppiumBy.androidUIAutomator: new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains("Converse All Star"))
+[INFO] - [08-04-2025 23:04:27] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [08-04-2025 23:04:28] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [08-04-2025 23:04:28] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/appbar_btn_cart")
+[INFO] - [08-04-2025 23:04:28] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/appbar_btn_cart")
+[INFO] - [08-04-2025 23:04:28] [main] [org.app.utils.JsonUtil] - Json path: 'product-names.Nike-Blazer-Mid-'77.name' in the json file: 'test-data' has value: 'Nike Blazer Mid '77'
+[INFO] - [08-04-2025 23:04:28] [main] [org.app.utils.WaitUtil] - Waiting for element to be visible: AppiumBy.androidUIAutomator: new UiSelector().text("Nike Blazer Mid '77")
+[INFO] - [08-04-2025 23:04:28] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().className("android.widget.CheckBox")
+[INFO] - [08-04-2025 23:04:29] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().className("android.widget.CheckBox")
+[INFO] - [08-04-2025 23:04:29] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().textContains("Visit")
+[INFO] - [08-04-2025 23:04:31] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().textContains("Visit")
+[ERROR] - [08-04-2025 23:04:31] [main] [org.app.utils.ScreenshotsUtil] - failed to take a screenshotCannot invoke "org.openqa.selenium.TakesScreenshot.getScreenshotAs(org.openqa.selenium.OutputType)" because "org.app.utils.ScreenshotsUtil.driver" is null

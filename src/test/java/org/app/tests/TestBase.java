@@ -32,8 +32,10 @@ public class TestBase {
     public void setUpAppiumService() {
         service = new AppiumServiceBuilder()
                // .withAppiumJS(new File("C:/Users/Manal Ibrahim/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
-                .usingPort(Integer.parseInt(PropertiesUtil.getPropertyValue("port")))
-                .withIPAddress(PropertiesUtil.getPropertyValue("ipAddress"))
+              //  .usingPort(Integer.parseInt(PropertiesUtil.getPropertyValue("port")))
+                .usingPort(4723)
+               // .withIPAddress(PropertiesUtil.getPropertyValue("ipAddress"))
+                .withIPAddress("127.0.0.1")
                 .withArgument(() -> "--use-drivers", "uiautomator2")
                 .build();
         service.start();
@@ -43,15 +45,18 @@ public class TestBase {
     public void setUpDriver() {
         UiAutomator2Options options = new UiAutomator2Options()
                 .setPlatformName("Android")
-                //.setDeviceName("Pixel_7_Pro_API_30")
+                .setDeviceName("Pixel_7_Pro_API_30")
                 .setApp(System.getProperty("user.dir") + "/src/test/resources/General-Store.apk")
-                .setAutomationName(PropertiesUtil.getPropertyValue("driver"))
-                .setUdid(PropertiesUtil.getPropertyValue("deviceId"))
+
+                .setAutomationName("uiautomator2")
+                //.setAutomationName(PropertiesUtil.getPropertyValue("driver"))
+                //.setUdid(PropertiesUtil.getPropertyValue("deviceId"))
                 .noReset(); // Keeps app data between sessions
         options.setCapability("appium:ignoreHiddenApiPolicyError", true);
         try {
+
             driver = new AndroidDriver(new URI("http://127.0.0.1:4723").toURL(), options);
-            ScreenshotsUtil.setDriver(driver);
+          //  ScreenshotsUtil.setDriver(driver);
         } catch (MalformedURLException | URISyntaxException e) {
             throw new RuntimeException("Failed to initialize Appium driver", e);
         }
