@@ -4,6 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
+import org.app.utils.CustomSoftAssertionUtil;
 import org.app.utils.ScreenshotsUtil;
 import org.openqa.selenium.By;
 
@@ -25,7 +26,6 @@ public class LoginPage {
     private By countryDropdown = AppiumBy.xpath("//*[@resource-id='android:id/text1']");
     private By nameField = AppiumBy.className("android.widget.EditText");
     private By shopButton = AppiumBy.androidUIAutomator("new UiSelector().resourceId(\"com.androidsample.generalstore:id/btnLetsShop\")");
-
 
     //actions
     @Step("click country dropdown")
@@ -62,7 +62,16 @@ public class LoginPage {
     // Click the Shop Button
     @Step("click shop button")
     public ProductsPage clickShopButton() {
-        ActionsUtil.click(driver, shopButton) ; // Using the click method from ActionsUtil
+        ActionsUtil.click(driver, shopButton) ;
+        return new ProductsPage(driver);
+    }
+
+    //validations
+    public ProductsPage validateLoginPage(){
+        String actualTitle = driver.getTitle();
+        //ActionsUtil.getText(driver,loginPageTitle);
+        String expectedTitle = "General Store";
+        CustomSoftAssertionUtil.softAssertion.assertEquals(actualTitle,expectedTitle,"The page title does not match. You may not be on the login page.");
         return new ProductsPage(driver);
     }
 }

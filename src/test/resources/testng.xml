@@ -1,0 +1,9 @@
+<suite name="FullSuite">
+    <test name="FullAppTestRun">
+        <classes>
+            <class name="org.app.tests.LoginTests"/>
+            <class name="org.app.tests.ProductsTests"/>
+            <class name="org.app.tests.CartTests"/>
+        </classes>
+    </test>
+</suite>

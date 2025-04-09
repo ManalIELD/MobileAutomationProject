@@ -33,6 +33,7 @@ public class CartPage {
     private By totalPurchaesedAmount = AppiumBy.androidUIAutomator("new UiSelector().text(\"$ 325.97\")");
     private By productPrices = By.xpath("//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice']");
     private By totalAmountLabel = By.id("com.androidsample.generalstore:id/totalAmountLbl");
+    private By ProductsPageTitle = AppiumBy.androidUIAutomator("new UiSelector().resourceId(\"com.androidsample.generalstore:id/toolbar_title\")");
 
     // validations
     @Step( "add item validation")
@@ -103,6 +104,14 @@ public class CartPage {
     public CartPage clickPurchaseButton() {
         ActionsUtil.click(driver,purchaseButton);
         return this;
+    }
+
+    //validations
+    public CartPage validateProductsPage(){
+        String actualTitle = ActionsUtil.getText(driver,ProductsPageTitle);
+        String expectedTitle = "Products";
+        CustomSoftAssertionUtil.softAssertion.assertEquals(actualTitle,expectedTitle,"The page title does not match. You may not be on the login page.");
+        return new CartPage(driver);
     }
 }
 

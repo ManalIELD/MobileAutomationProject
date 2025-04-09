@@ -1,0 +1,67 @@
+[INFO] - [09-04-2025 19:26:56] [main] [org.app.listeners.TestNGListeners] - Test execution started
+[INFO] - [09-04-2025 19:26:56] [main] [org.app.utils.PropertiesUtil] - Loading Properties File Data
+[INFO] - [09-04-2025 19:27:06] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //*[@resource-id='android:id/text1']
+[INFO] - [09-04-2025 19:27:09] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //*[@resource-id='android:id/text1']
+[INFO] - [09-04-2025 19:27:09] [main] [org.app.utils.JsonUtil] - Json path: 'login-credentials.person1.country' in the json file: 'test-data' has value: 'Argentina'
+[INFO] - [09-04-2025 19:27:13] [main] [org.app.utils.ActionsUtil] - Scrolled to element Argentina
+[INFO] - [09-04-2025 19:27:13] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='Argentina']
+[INFO] - [09-04-2025 19:27:13] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='Argentina']
+[INFO] - [09-04-2025 19:27:13] [main] [org.app.utils.JsonUtil] - Json path: 'login-credentials.person1.gender' in the json file: 'test-data' has value: 'Female'
+[INFO] - [09-04-2025 19:27:13] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.RadioButton[@text='Female']
+[INFO] - [09-04-2025 19:27:14] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.RadioButton[@text='Female']
+[INFO] - [09-04-2025 19:27:14] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/btnLetsShop")
+[INFO] - [09-04-2025 19:27:15] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/btnLetsShop")
+[INFO] - [09-04-2025 19:27:15] [main] [org.app.utils.WaitUtil] - Waiting for element to be visible: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/toolbar_title")
+
+[INFO] - [09-04-2025 19:27:15] [main] [org.app.utils.ActionsUtil] - Getting text from AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/toolbar_title")
+ text: General Store
+[INFO] - [09-04-2025 19:27:16] [main] [org.app.listeners.TestNGListeners] - Test case invalidLogin passed
+[INFO] - [09-04-2025 19:27:21] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //*[@resource-id='android:id/text1']
+[INFO] - [09-04-2025 19:27:21] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //*[@resource-id='android:id/text1']
+[INFO] - [09-04-2025 19:27:21] [main] [org.app.utils.JsonUtil] - Json path: 'login-credentials.person1.country' in the json file: 'test-data' has value: 'Argentina'
+[INFO] - [09-04-2025 19:27:22] [main] [org.app.utils.ActionsUtil] - Scrolled to element Argentina
+[INFO] - [09-04-2025 19:27:22] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='Argentina']
+[INFO] - [09-04-2025 19:27:23] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='Argentina']
+[INFO] - [09-04-2025 19:27:23] [main] [org.app.utils.JsonUtil] - Json path: 'login-credentials.person1.name' in the json file: 'test-data' has value: 'Manal'
+[INFO] - [09-04-2025 19:27:23] [main] [org.app.utils.WaitUtil] - Waiting for element to be visible: AppiumBy.className: android.widget.EditText
+[INFO] - [09-04-2025 19:27:24] [main] [org.app.utils.ActionsUtil] - Data entered Manal in the field AppiumBy.className: android.widget.EditText
+[INFO] - [09-04-2025 19:27:24] [main] [org.app.utils.JsonUtil] - Json path: 'login-credentials.person1.gender' in the json file: 'test-data' has value: 'Female'
+[INFO] - [09-04-2025 19:27:24] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.RadioButton[@text='Female']
+[INFO] - [09-04-2025 19:27:25] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.RadioButton[@text='Female']
+[INFO] - [09-04-2025 19:27:25] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/btnLetsShop")
+[INFO] - [09-04-2025 19:27:25] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/btnLetsShop")
+[INFO] - [09-04-2025 19:27:26] [main] [org.app.listeners.TestNGListeners] - Test case validLogin passed
+[INFO] - [09-04-2025 19:27:26] [main] [org.app.utils.PropertiesUtil] - Loading Properties File Data
+[INFO] - [09-04-2025 19:27:30] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/appbar_btn_cart")
+[INFO] - [09-04-2025 19:27:31] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/appbar_btn_cart")
+[INFO] - [09-04-2025 19:27:31] [main] [org.app.utils.WaitUtil] - Waiting for element to be visible: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/toolbar_title")
+[INFO] - [09-04-2025 19:27:31] [main] [org.app.utils.ActionsUtil] - Getting text from AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/toolbar_title") text: Products
+[INFO] - [09-04-2025 19:27:32] [main] [org.app.listeners.TestNGListeners] - Test case invalidNavigationToCart passed
+[ERROR] - [09-04-2025 19:27:36] [main] [org.app.utils.JsonUtil] - class java.util.LinkedHashMap cannot be cast to class java.lang.String (java.util.LinkedHashMap and java.lang.String are in module java.base of loader 'bootstrap') No results for json path: 'product-names.Air-Jordan-4-Retro' in the json file: 'test-data'
+[INFO] - [09-04-2025 19:27:36] [main] [org.app.utils.JsonUtil] - Json path: 'product-names.Air-Jordan-4-Retro' in the json file: 'test-data' has value: ''
+[INFO] - [09-04-2025 19:27:36] [main] [org.app.utils.ActionsUtil] - finding element AppiumBy.androidUIAutomator: new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains(""))
+[INFO] - [09-04-2025 19:27:36] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [09-04-2025 19:27:37] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [09-04-2025 19:27:37] [main] [org.app.utils.JsonUtil] - Json path: 'product-names.Nike-Blazer-Mid-'77.name' in the json file: 'test-data' has value: 'Nike Blazer Mid '77'
+[INFO] - [09-04-2025 19:27:37] [main] [org.app.utils.ActionsUtil] - finding element AppiumBy.androidUIAutomator: new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains("Nike Blazer Mid '77"))
+[INFO] - [09-04-2025 19:27:40] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [09-04-2025 19:27:41] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [09-04-2025 19:27:41] [main] [org.app.utils.JsonUtil] - Json path: 'product-names.Converse-All-Star.name' in the json file: 'test-data' has value: 'Converse All Star'
+[INFO] - [09-04-2025 19:27:41] [main] [org.app.utils.ActionsUtil] - finding element AppiumBy.androidUIAutomator: new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().textContains("Converse All Star"))
+[INFO] - [09-04-2025 19:27:41] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [09-04-2025 19:27:42] [main] [org.app.utils.ActionsUtil] - Clicked on element By.xpath: //android.widget.TextView[@text='ADD TO CART']
+[INFO] - [09-04-2025 19:27:42] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/appbar_btn_cart")
+[INFO] - [09-04-2025 19:27:42] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().resourceId("com.androidsample.generalstore:id/appbar_btn_cart")
+[INFO] - [09-04-2025 19:27:43] [main] [org.app.listeners.TestNGListeners] - Test case validAddingProductsAndProceedingToCartPage passed
+[INFO] - [09-04-2025 19:27:43] [main] [org.app.utils.PropertiesUtil] - Loading Properties File Data
+[INFO] - [09-04-2025 19:27:47] [main] [org.app.utils.JsonUtil] - Json path: 'product-names.Nike-Blazer-Mid-'77.name' in the json file: 'test-data' has value: 'Nike Blazer Mid '77'
+[INFO] - [09-04-2025 19:27:47] [main] [org.app.utils.WaitUtil] - Waiting for element to be visible: AppiumBy.androidUIAutomator: new UiSelector().text("Nike Blazer Mid '77")
+[INFO] - [09-04-2025 19:27:48] [main] [org.app.utils.ActionsUtil] - Scrolled to bottom of the page successfully.
+[INFO] - [09-04-2025 19:27:48] [main] [org.app.pages.CartPage] - Computed total: 325.97
+[INFO] - [09-04-2025 19:27:48] [main] [org.app.pages.CartPage] - Displayed total: 325.97
+[INFO] - [09-04-2025 19:27:48] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().className("android.widget.CheckBox")
+[INFO] - [09-04-2025 19:27:49] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().className("android.widget.CheckBox")
+[INFO] - [09-04-2025 19:27:49] [main] [org.app.utils.WaitUtil] - Waiting for element to be clickable: AppiumBy.androidUIAutomator: new UiSelector().textContains("Visit")
+[INFO] - [09-04-2025 19:27:49] [main] [org.app.utils.ActionsUtil] - Clicked on element AppiumBy.androidUIAutomator: new UiSelector().textContains("Visit")
+[INFO] - [09-04-2025 19:27:50] [main] [org.app.listeners.TestNGListeners] - Test case validCartTest passed
+[INFO] - [09-04-2025 19:27:50] [main] [org.app.listeners.TestNGListeners] - Test execution finished

@@ -22,8 +22,8 @@ public class TestBase {
     private AppiumDriverLocalService service;
     JsonUtil testData;
 
-    @BeforeSuite
-    public void beforeSuite(){
+    @BeforeClass
+    public void beforeClass(){
         loadProperties();
         testData = new JsonUtil("test-data");
     }
