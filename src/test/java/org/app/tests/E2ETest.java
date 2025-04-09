@@ -10,7 +10,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(TestNGListeners.class)
-public class E2eTest extends TestBase {
+public class E2ETest extends TestBase {
 
     //test
 
@@ -33,7 +33,7 @@ public class E2eTest extends TestBase {
 
         CartPage cartPage = new CartPage(driver);
         cartPage.addItemValidation(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"));
-        //cartPage.validateTotalPurchaseAmount();
+        cartPage.validateTotalPurchaseAmount();
         cartPage.selectEmailCheckbox();
         cartPage.clickPurchaseButton();
     }
