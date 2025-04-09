@@ -28,7 +28,6 @@ public class E2eTest extends TestBase {
         productsPage.addProductToCart(testData.getJsonData("product-names.Air-Jordan-4-Retro"));
         productsPage.addProductToCart(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"));
         productsPage.addProductToCart(testData.getJsonData("product-names.Converse-All-Star.name"));
-
         productsPage.validateItemAddedToCart();
         productsPage.clickCartIcon();
 

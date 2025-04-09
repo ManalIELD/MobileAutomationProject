@@ -6,8 +6,6 @@ import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
 import org.app.utils.WaitUtil;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import java.time.Duration;
 public class CartPage {
