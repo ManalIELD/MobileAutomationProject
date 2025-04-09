@@ -46,7 +46,17 @@ public class ActionsUtil {
             LogsUtil.error("Failed to scroll to element", textToFind);
         }
     }
-
+    public static void scrollToBottom(AndroidDriver driver) {
+        try {
+            // This UIAutomator command will "fling" (scroll fast) to the end of the first scrollable element found.
+            driver.findElement(AppiumBy.androidUIAutomator(
+                    "new UiScrollable(new UiSelector().scrollable(true).instance(0)).flingToEnd(5)"
+            ));
+            LogsUtil.info("Scrolled to bottom of the page successfully.");
+        } catch (Exception e) {
+            LogsUtil.error("Failed to scroll to bottom of the page: " + e.getMessage());
+        }
+    }
 
 
 }

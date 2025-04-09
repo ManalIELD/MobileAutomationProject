@@ -29,35 +29,40 @@ public class LoginPage {
 
     //actions
     @Step("click country dropdown")
-    public void clickCountryDropdown() {
+    public LoginPage clickCountryDropdown() {
         ActionsUtil.click(driver, countryDropdown);  // Using the click method from ActionsUtil
+        return this;
     }
 
     // Selects a specific country by scrolling and clicking on it
     @Step("choose country")
-    public void chooseCountry(String countryName) {
+    public LoginPage chooseCountry(String countryName) {
         ActionsUtil.scrollToElement(driver, countryName);
         By countryLocator = By.xpath("//android.widget.TextView[@text='" + countryName + "']");
         ActionsUtil.click(driver, countryLocator);
+        return this;
     }
 
     // Enter name into the name field
     @Step("enter name")
-    public void enterName(String name) {
+    public LoginPage enterName(String name) {
         ActionsUtil.type(driver, nameField, name);  // Using the type method from ActionsUtil
+        return this;
     }
 
     // Select Gender
     @Step ("select gender")
-    public void selectGender(String gender) {
+    public LoginPage selectGender(String gender) {
         By genderLocator = By.xpath("//android.widget.RadioButton[@text='" + gender + "']");
         ActionsUtil.click(driver, genderLocator);
+        return this;
     }
 
 
     // Click the Shop Button
     @Step("click shop button")
-    public void clickShopButton() {
+    public ProductsPage clickShopButton() {
         ActionsUtil.click(driver, shopButton) ; // Using the click method from ActionsUtil
-     }
+        return new ProductsPage(driver);
+    }
 }

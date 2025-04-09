@@ -15,30 +15,26 @@ public class E2ETest extends TestBase {
     //test
 
     @Test
-    public void E2eScenario(){
+    public void E2eScenario() {
         LoginPage loginPage = new LoginPage(driver);
 
-        loginPage.clickCountryDropdown();
-        loginPage.chooseCountry(testData.getJsonData("login-credentials.person1.country"));
-        loginPage.enterName(testData.getJsonData("login-credentials.person1.name"));
-        loginPage.selectGender(testData.getJsonData("login-credentials.person1.gender"));
-        loginPage.clickShopButton();
+        loginPage.clickCountryDropdown()
+                .chooseCountry(testData.getJsonData("login-credentials.person1.country"))
+                .enterName(testData.getJsonData("login-credentials.person1.name"))
+                .selectGender(testData.getJsonData("login-credentials.person1.gender"))
+                .clickShopButton()
 
-        ProductsPage productsPage = new ProductsPage(driver);
-        productsPage.addProductToCart(testData.getJsonData("product-names.Air-Jordan-4-Retro"));
-        productsPage.addProductToCart(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"));
-        productsPage.addProductToCart(testData.getJsonData("product-names.Converse-All-Star.name"));
-        productsPage.validateItemAddedToCart();
-        productsPage.clickCartIcon();
+                .addProductToCart(testData.getJsonData("product-names.Air-Jordan-4-Retro"))
+                .addProductToCart(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
+                .addProductToCart(testData.getJsonData("product-names.Converse-All-Star.name"))
+                .validateItemAddedToCart()
+                .clickCartIcon()
 
-        CartPage cartPage = new CartPage(driver);
-        cartPage.addItemValidation(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"));
-        cartPage.validateTotalPurchaseAmount();
-        cartPage.selectEmailCheckbox();
-        cartPage.clickPurchaseButton();
-    }
-    @AfterClass
-    public void afterClass(){
-        AllureUtil.attachLogsToAllureReport();
+                .addItemValidation(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
+                //.validateTotalPurchaseAmount();
+                .validateTotalPurchaseAmount2()
+                .selectEmailCheckbox()
+                .clickPurchaseButton();
+
     }
 }

@@ -26,22 +26,27 @@ public class ProductsPage {
     private By addedToCart=AppiumBy.androidUIAutomator("new UiSelector().text(\"ADDED TO CART\")\n");
     //actions
     @Step("add product to cart")
-    public void addProductToCart(String productName) {
+    public ProductsPage addProductToCart(String productName) {
     By product = AppiumBy.androidUIAutomator(
             "new UiScrollable(new UiSelector().scrollable(true))" +
                     ".scrollIntoView(new UiSelector().textContains(\"" + productName + "\"))");
     ActionsUtil.findElement(driver,product);
         ActionsUtil.click(driver,addToCartButton);
+        return this;
     }
 
     @Step("click cart icon")
-    public void clickCartIcon() {
+    public CartPage clickCartIcon() {
+
         ActionsUtil.click(driver,cartIcon);
+        return new CartPage(driver);
     }
 
     //validations
-    public void validateItemAddedToCart() {
+    @Step("Validating item added to the cart")
+    public ProductsPage validateItemAddedToCart() {
         Assert.assertTrue(driver.findElement(addedToCart).isDisplayed(), "Item was not added to the cart!");
+        return this;
     }
 
 }

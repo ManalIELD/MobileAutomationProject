@@ -7,9 +7,10 @@ import org.app.utils.ActionsUtil;
 import org.app.utils.CustomSoftAssertionUtil;
 import org.app.utils.WaitUtil;
 import org.app.utils.JsonUtil;
+import org.app.utils.LogsUtil;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-
 import java.awt.*;
 import java.time.Duration;
 import java.util.Arrays;
@@ -25,19 +26,21 @@ public class CartPage {
     }
 // i used by.xpath >>> but it didn't work as expected especially for "visit... button" so i used uiautomator, just wanna let u know
 
-    private By productName = AppiumBy.androidUIAutomator("new UiSelector().text(\"Air Jordan 4 Retro\")");
-    private By productPrice = AppiumBy.androidUIAutomator("new UiSelector().text(\"$ 160.97\")");
+    //private By productName = AppiumBy.androidUIAutomator("new UiSelector().text(\"Air Jordan 4 Retro\")");
+    //private By productPrice = AppiumBy.androidUIAutomator("new UiSelector().text(\"$ 160.97\")");
     private By emailCheckbox = AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.CheckBox\")");
     private By purchaseButton = AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Visit\")");
     private By totalPurchaesedAmount = AppiumBy.androidUIAutomator("new UiSelector().text(\"$ 325.97\")");
-
+    private By productPrices = By.xpath("//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice']");
+    private By totalAmountLabel = By.id("com.androidsample.generalstore:id/totalAmountLbl");
 
     // validations
     @Step( "add item validation")
-    public void addItemValidation(String productName) {
+    public CartPage addItemValidation(String productName) {
         By productInCart = AppiumBy.androidUIAutomator("new UiSelector().text(\"" + productName + "\")");
         WaitUtil.waitForElementVisibility(driver,productInCart);
         Assert.assertTrue(driver.findElement(productInCart).isDisplayed(), "Item '" + productName + "' is not displayed in the cart!");
+        return this;
     }
 
 // this didn't work well and I couldn't excute other testcases well , so I ignored it for now to check all worked properly
@@ -72,14 +75,34 @@ public class CartPage {
        }
 
     // }
+
+    public CartPage validateTotalPurchaseAmount2() {
+        double sum = 0.0;
+        ActionsUtil.scrollToBottom(driver);
+        List<WebElement> priceElements = driver.findElements(By.id("com.androidsample.generalstore:id/productPrice"));
+        for (WebElement priceElement : priceElements) {
+            String priceText = priceElement.getText().replace("$", "").trim();
+            sum += Double.parseDouble(priceText);
+        }
+
+        String totalText = driver.findElement(totalAmountLabel).getText().replace("$", "").trim();
+        double total = Double.parseDouble(totalText);
+        LogsUtil.info("Computed total: " + sum);
+        LogsUtil.info("Displayed total: " + total);
+        CustomSoftAssertionUtil.softAssertion.assertEquals(sum, total, "Total amount mismatch!");
+
+        return this;
+    }
  // Actions
        @Step("select email checkbox")
-    public void selectEmailCheckbox() {
+    public CartPage selectEmailCheckbox() {
         ActionsUtil.click(driver,emailCheckbox);
+        return this;
     }
       @Step("click purchase button")
-    public void clickPurchaseButton() {
+    public CartPage clickPurchaseButton() {
         ActionsUtil.click(driver,purchaseButton);
+        return this;
     }
 }
 

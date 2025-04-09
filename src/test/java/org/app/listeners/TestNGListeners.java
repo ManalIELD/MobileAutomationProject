@@ -27,6 +27,13 @@ public class TestNGListeners implements ITestListener, IInvokedMethodListener, I
     @Override
     public void afterInvocation(IInvokedMethod method, ITestResult testResult) {
         if (method.isTestMethod()) {
+            try {
+                CustomSoftAssertionUtil.customAssertAll(testResult);
+
+            }catch (AssertionError e){
+                testResult.setStatus(ITestResult.FAILURE);
+                testResult.setThrowable(e);
+            }
             switch (testResult.getStatus()) {
                 case ITestResult.SUCCESS -> ScreenshotsUtil.takeScreenshot("passed-" + testResult.getName());
                 case ITestResult.FAILURE -> ScreenshotsUtil.takeScreenshot("failed-" + testResult.getName());
