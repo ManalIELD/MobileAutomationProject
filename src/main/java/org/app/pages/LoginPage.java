@@ -66,12 +66,4 @@ public class LoginPage {
         return new ProductsPage(driver);
     }
 
-    //validations
-    public ProductsPage validateLoginPage(){
-        String actualTitle = driver.getTitle();
-        //ActionsUtil.getText(driver,loginPageTitle);
-        String expectedTitle = "General Store";
-        CustomSoftAssertionUtil.softAssertion.assertEquals(actualTitle,expectedTitle,"The page title does not match. You may not be on the login page.");
-        return new ProductsPage(driver);
-    }
 }

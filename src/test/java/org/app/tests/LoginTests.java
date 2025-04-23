@@ -17,7 +17,7 @@ public class LoginTests extends TestBase{
                 .validateLoginPage();
 
     }
-    @Test(dependsOnMethods = "invalidLogin")
+    @Test(priority = 1)
     public void validLogin(){
         new LoginPage(driver).clickCountryDropdown()
                 .chooseCountry(testData.getJsonData("login-credentials.person1.country"))

@@ -31,8 +31,7 @@ public class E2ETest extends TestBase {
                 .clickCartIcon()
 
                 .addItemValidation(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
-                //.validateTotalPurchaseAmount();
-                .validateTotalPurchaseAmount2()
+                .validateTotalPurchaseAmount()
                 .selectEmailCheckbox()
                 .clickPurchaseButton();
 

@@ -12,7 +12,7 @@ public class CartTests extends TestBase{
     public void validCartTest(){
         new CartPage(driver)
                 .addItemValidation(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
-                .validateTotalPurchaseAmount2()
+                .validateTotalPurchaseAmount()
                 .selectEmailCheckbox()
                 .clickPurchaseButton();
     }

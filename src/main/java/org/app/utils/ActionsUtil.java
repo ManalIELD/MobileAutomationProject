@@ -3,7 +3,6 @@ package org.app.utils;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 
@@ -39,7 +38,7 @@ public class ActionsUtil {
     public static void scrollToElement(AndroidDriver driver, String textToFind) {
         try {
             driver.findElement(AppiumBy.androidUIAutomator(
-                    "new UiScrollable(new UiSelector().scrollable(true).instance(0))" +
+                    "new UiScrollable(new UiSelector().scrollable(true))" +
                             ".scrollIntoView(new UiSelector().text(\"" + textToFind + "\"))"));
             LogsUtil.info("Scrolled to element", textToFind);
         } catch (Exception e) {

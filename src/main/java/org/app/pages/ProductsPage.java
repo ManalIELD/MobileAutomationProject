@@ -6,11 +6,8 @@ import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
 import org.app.utils.CustomSoftAssertionUtil;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import java.time.Duration;
 
 public class ProductsPage {
     //variables
@@ -29,10 +26,11 @@ public class ProductsPage {
     //actions
     @Step("add product to cart")
     public ProductsPage addProductToCart(String productName) {
-    By product = AppiumBy.androidUIAutomator(
+        By product = AppiumBy.androidUIAutomator(
             "new UiScrollable(new UiSelector().scrollable(true))" +
                     ".scrollIntoView(new UiSelector().textContains(\"" + productName + "\"))");
-    ActionsUtil.findElement(driver,product);
+        ActionsUtil.findElement(driver,product);
+        //ActionsUtil.scrollToElement(driver,productName);
         ActionsUtil.click(driver,addToCartButton);
         return this;
     }

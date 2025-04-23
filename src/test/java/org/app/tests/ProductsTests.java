@@ -13,7 +13,7 @@ public class ProductsTests extends TestBase{
         new ProductsPage(driver).clickCartIcon()
                 .validateProductsPage();
     }
-    @Test(dependsOnMethods = "invalidNavigationToCart")
+    @Test(dependsOnMethods = "org.app.tests.LoginTests.validLogin",priority = 1)
     public void validAddingProductsAndProceedingToCartPage(){
         new ProductsPage(driver).addProductToCart(testData.getJsonData("product-names.Air-Jordan-4-Retro"))
                 .addProductToCart(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
