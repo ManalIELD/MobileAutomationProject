@@ -16,7 +16,7 @@ import java.net.URISyntaxException;
 
 import static org.app.utils.PropertiesUtil.loadProperties;
 
-public class TestBase {
+public class TestBase extends Variables {
     //variables
     protected AndroidDriver driver; // This is the global driver instance
     private AppiumDriverLocalService service;
@@ -26,16 +26,17 @@ public class TestBase {
     public void beforeClass(){
         loadProperties();
         testData = new JsonUtil("test-data");
+        country = json.getJsonData("login-credentials.person1.country");
     }
 
     @BeforeClass
     public void setUpAppiumService() {
         service = new AppiumServiceBuilder()
-               // .withAppiumJS(new File("C:/Users/Manal Ibrahim/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
-              //  .usingPort(Integer.parseInt(PropertiesUtil.getPropertyValue("port")))
-                .usingPort(4723)
-               // .withIPAddress(PropertiesUtil.getPropertyValue("ipAddress"))
-                .withIPAddress("127.0.0.1")
+               .withAppiumJS(new File("C:/Users/Manal Ibrahim/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
+                .usingPort(Integer.parseInt(PropertiesUtil.getPropertyValue("port")))
+                //.usingPort(4723)
+               .withIPAddress(PropertiesUtil.getPropertyValue("ipAddress"))
+               // .withIPAddress("127.0.0.1")
                 .withArgument(() -> "--use-drivers", "uiautomator2")
                 .build();
         service.start();

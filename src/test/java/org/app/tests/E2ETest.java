@@ -8,9 +8,9 @@ import org.app.utils.AllureUtil;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
+import org.app.tests.Variables;
 @Listeners(TestNGListeners.class)
-public class E2ETest extends TestBase {
+public class E2ETest extends TestBase  {
 
     //test
 
@@ -19,7 +19,7 @@ public class E2ETest extends TestBase {
         LoginPage loginPage = new LoginPage(driver);
 
         loginPage.clickCountryDropdown()
-                .chooseCountry(testData.getJsonData("login-credentials.person1.country"))
+                .chooseCountry(country)
                 .enterName(testData.getJsonData("login-credentials.person1.name"))
                 .selectGender(testData.getJsonData("login-credentials.person1.gender"))
                 .clickShopButton()
