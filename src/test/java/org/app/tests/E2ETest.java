@@ -1,14 +1,9 @@
 package org.app.tests;
 
 import org.app.listeners.TestNGListeners;
-import org.app.pages.CartPage;
 import org.app.pages.LoginPage;
-import org.app.pages.ProductsPage;
-import org.app.utils.AllureUtil;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-import org.app.tests.Variables;
 @Listeners(TestNGListeners.class)
 public class E2ETest extends TestBase  {
 
@@ -20,17 +15,17 @@ public class E2ETest extends TestBase  {
 
         loginPage.clickCountryDropdown()
                 .chooseCountry(country)
-                .enterName(testData.getJsonData("login-credentials.person1.name"))
-                .selectGender(testData.getJsonData("login-credentials.person1.gender"))
+                .enterName(name)
+                .selectGender(gender)
                 .clickShopButton()
 
-                .addProductToCart(testData.getJsonData("product-names.Air-Jordan-4-Retro"))
-                .addProductToCart(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
-                .addProductToCart(testData.getJsonData("product-names.Converse-All-Star.name"))
+                .addProductToCart(airJordan)
+                .addProductToCart(nikeBlaze)
+                .addProductToCart(converse)
                 .validateItemAddedToCart()
                 .clickCartIcon()
 
-                .addItemValidation(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
+                .addItemValidation(nikeBlaze)
                 .validateTotalPurchaseAmount()
                 .selectEmailCheckbox()
                 .clickPurchaseButton();

@@ -11,7 +11,7 @@ public class CartTests extends TestBase{
     @Test(dependsOnMethods = "org.app.tests.ProductsTests.validAddingProductsAndProceedingToCartPage")
     public void validCartTest(){
         new CartPage(driver)
-                .addItemValidation(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
+                .addItemValidation(nikeBlaze)
                 .validateTotalPurchaseAmount()
                 .selectEmailCheckbox()
                 .clickPurchaseButton();

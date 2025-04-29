@@ -26,17 +26,21 @@ public class TestBase extends Variables {
     public void beforeClass(){
         loadProperties();
         testData = new JsonUtil("test-data");
-        country = json.getJsonData("login-credentials.person1.country");
+        country = testData.getJsonData("login-credentials.person1.country");
+        name = testData.getJsonData("login-credentials.person1.name");
+        gender = testData.getJsonData("login-credentials.person1.gender");
+        airJordan = testData.getJsonData("product-names.Air-Jordan-4-Retro");
+        nikeBlaze = testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name");
+        converse = testData.getJsonData("product-names.Converse-All-Star.name");
+
     }
 
     @BeforeClass
     public void setUpAppiumService() {
         service = new AppiumServiceBuilder()
-               .withAppiumJS(new File("C:/Users/Manal Ibrahim/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
+               // .withAppiumJS(new File("C:/Users/Manal Ibrahim/AppData/Roaming/npm/node_modules/appium/build/lib/main.js"))
                 .usingPort(Integer.parseInt(PropertiesUtil.getPropertyValue("port")))
-                //.usingPort(4723)
-               .withIPAddress(PropertiesUtil.getPropertyValue("ipAddress"))
-               // .withIPAddress("127.0.0.1")
+                .withIPAddress(PropertiesUtil.getPropertyValue("ipAddress"))
                 .withArgument(() -> "--use-drivers", "uiautomator2")
                 .build();
         service.start();
@@ -46,13 +50,11 @@ public class TestBase extends Variables {
     public void setUpDriver() {
         UiAutomator2Options options = new UiAutomator2Options()
                 .setPlatformName("Android")
-                .setDeviceName("Pixel_7_Pro_API_30")
+               // .setDeviceName("Pixel_7_Pro_API_30")
                 .setApp(System.getProperty("user.dir") + "/src/test/resources/General-Store.apk")
-
-                .setAutomationName("uiautomator2")
-                //.setAutomationName(PropertiesUtil.getPropertyValue("driver"))
-                //.setUdid(PropertiesUtil.getPropertyValue("deviceId"))
-                .noReset(); // Keeps app data between sessions
+                .setAutomationName(PropertiesUtil.getPropertyValue("driver"))
+                .setUdid(PropertiesUtil.getPropertyValue("deviceId"))
+                .noReset();
         options.setCapability("appium:ignoreHiddenApiPolicyError", true);
         try {
 

@@ -15,9 +15,10 @@ public class ProductsTests extends TestBase{
     }
     @Test(dependsOnMethods = "org.app.tests.LoginTests.validLogin",priority = 1)
     public void validAddingProductsAndProceedingToCartPage(){
-        new ProductsPage(driver).addProductToCart(testData.getJsonData("product-names.Air-Jordan-4-Retro"))
-                .addProductToCart(testData.getJsonData("product-names.Nike-Blazer-Mid-'77.name"))
-                .addProductToCart(testData.getJsonData("product-names.Converse-All-Star.name"))
+        new ProductsPage(driver)
+                .addProductToCart(airJordan)
+                .addProductToCart(nikeBlaze)
+                .addProductToCart(converse)
                 .validateItemAddedToCart()
                 .clickCartIcon();
     }

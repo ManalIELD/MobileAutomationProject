@@ -23,6 +23,7 @@ public class ProductsPage {
     private By addToCartButton=AppiumBy.xpath("//android.widget.TextView[@text='ADD TO CART']");
     private By addedToCart=AppiumBy.androidUIAutomator("new UiSelector().text(\"ADDED TO CART\")\n");
     private By loginPageTitle = AppiumBy.androidUIAutomator("new UiSelector().resourceId(\"com.androidsample.generalstore:id/toolbar_title\")\n");
+
     //actions
     @Step("add product to cart")
     public ProductsPage addProductToCart(String productName) {

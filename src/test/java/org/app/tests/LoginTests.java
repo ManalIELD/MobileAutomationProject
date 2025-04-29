@@ -4,6 +4,7 @@ import org.app.listeners.TestNGListeners;
 import org.app.pages.LoginPage;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
 @Listeners(TestNGListeners.class)
 public class LoginTests extends TestBase{
 
@@ -11,8 +12,8 @@ public class LoginTests extends TestBase{
     @Test
     public void invalidLogin(){
         new LoginPage(driver).clickCountryDropdown()
-                .chooseCountry(testData.getJsonData("login-credentials.person1.country"))
-                .selectGender(testData.getJsonData("login-credentials.person1.gender"))
+                .chooseCountry(country)
+                .selectGender(gender)
                 .clickShopButton()
                 .validateLoginPage();
 
@@ -20,9 +21,9 @@ public class LoginTests extends TestBase{
     @Test(priority = 1)
     public void validLogin(){
         new LoginPage(driver).clickCountryDropdown()
-                .chooseCountry(testData.getJsonData("login-credentials.person1.country"))
-                .enterName(testData.getJsonData("login-credentials.person1.name"))
-                .selectGender(testData.getJsonData("login-credentials.person1.gender"))
+                .chooseCountry(country)
+                .enterName(name)
+                .selectGender(gender)
                 .clickShopButton();
     }
 

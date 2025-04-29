@@ -1,8 +1,13 @@
 package org.app.tests;
 
-import org.app.utils.JsonUtil;
 
 public class Variables {
-    JsonUtil json = new JsonUtil("test-data");
-    public static  String country ;
+
+    public static String country ;
+    public static String name;
+    public static String gender;
+    public static String airJordan;
+    public static String nikeBlaze;
+    public static String converse;
+
 }

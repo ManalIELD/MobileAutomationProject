@@ -4,8 +4,7 @@ import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.qameta.allure.Step;
 import org.app.utils.ActionsUtil;
-import org.app.utils.CustomSoftAssertionUtil;
-import org.app.utils.ScreenshotsUtil;
+
 import org.openqa.selenium.By;
 
 

@@ -23,8 +23,6 @@ public class CartPage {
 
     private By emailCheckbox = AppiumBy.androidUIAutomator("new UiSelector().className(\"android.widget.CheckBox\")");
     private By purchaseButton = AppiumBy.androidUIAutomator("new UiSelector().textContains(\"Visit\")");
-    private By totalPurchaesedAmount = AppiumBy.androidUIAutomator("new UiSelector().text(\"$ 325.97\")");
-    private By productPrices = By.xpath("//android.widget.TextView[@resource-id='com.androidsample.generalstore:id/productPrice']");
     private By totalAmountLabel = By.id("com.androidsample.generalstore:id/totalAmountLbl");
     private By ProductsPageTitle = AppiumBy.androidUIAutomator("new UiSelector().resourceId(\"com.androidsample.generalstore:id/toolbar_title\")");
 
